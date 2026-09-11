@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+    <title>Travel Time Calculator</title>
+    <script>
+        let distance = parseInt(prompt("enter a distance"));
+        let speed = parseInt(prompt("enter a speed"));
+        let time = distance / speed;
+        let hours = Math.floor(time);
+        let minutes = Math.round(time - hours) * 60
+
+        alert(`Distance: ${distance}\nSpeed: ${speed}\nTravel time: ${hours} ${minutes}`)
+    </script>
+</head>
+<body>
+</body>
+</html>
