@@ -24,9 +24,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // calculate days
         const today = new Date();
-        const msFromToday = eventDate.getTime() - today.getTime();
-        const msForOneDay = 24 * 60 * 60 * 1000; // hrs * mins * secs * milliseconds  
+        let msFromToday = eventDate.getTime() - today.getTime();
+        const msForOneDay = 24 * 60 * 60 * 1000; // hrs * mins * secs * milliseconds
+        msFromToday = msFromToday % msForOneDay;
+        const msForHours =  60 * 60 * 1000;
+        msFromToday = msFromToday % msForHours;
+        const msForMinutes = 60 * 1000;
+        msFromToday = msFromToday % msForMinutes;
+        const msForSeconds = 1000;
         const daysToDate = Math.ceil( msFromToday / msForOneDay ); 
+        const hoursToDate = Math.ceil( msFromToday / msForHours);
+        const minutesToDate = Math.ceil( msFromToday / msForMinutes);
+        const secondsToDate = Math.floor( msFromToday / msForSeconds);
 
         // create and display message 
         const displayDate = eventDate.toDateString();
@@ -34,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (daysToDate == 0) {
             msg = `Hooray! Today is ${eventName}! (${displayDate})`;
         } else if (daysToDate > 0) {
-            msg = `${daysToDate} day(s) until ${eventName}! (${displayDate})`;
+            msg = `${daysToDate} day(s), ${hoursToDate} hours, ${minutesToDate} minutes, and ${secondsToDate} seconds until ${eventName}! (${msForOneDay})`;
         } else if (daysToDate < 0) {
             msg = `${eventName} happened ${Math.abs(daysToDate)} 
                    day(s) ago. (${displayDate})`;
