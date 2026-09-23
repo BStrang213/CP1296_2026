@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tip Calculator</title>
+    </head>
+    <body>
+        <script>
+            let cost = parseFloat(prompt("Enter the cost:"));
+            let tipPercent = parseFloat(prompt("Enter the tip precentage:"));
+            let tip = cost * (tipPercent / 100);
+            let total = cost + tip;
+
+            alert(`Meal cosst: $${cost}\nTip percent: ${tipPercent}%\nTip amount: $${tip}\nTotal cost: $${total}`)
+        </script>
+    </body>
+</html>

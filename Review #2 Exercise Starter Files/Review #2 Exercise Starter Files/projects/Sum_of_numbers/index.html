@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            let confirm = "y"
+            while (confirm == "y") {
+                let number = parseInt(prompt("what is the number(1-100):"));
+                let number1 = 1;
+                if ((number < 1) || (number > 100)) {
+                    alert("Number is not between 1-100!");
+                };
+                for (let i = 0; number > i; i++) {
+                    total = number1 += i;
+                };
+                alert(`the sum between 1 and ${number} is ${total}`);
+                confirm = prompt("Do you want to do another sum?");
+            }
+        </script>
+    </body>
+</html>
