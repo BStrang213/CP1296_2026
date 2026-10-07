@@ -37,6 +37,13 @@ const guessButtonClick = () => {
         message = "You guessed it!";
     }
     document.querySelector("#message").textContent = message;
+    
+    try {
+        getGuess();
+    } catch(Error) {
+        const msg = `${Error.message}`
+        document.querySelector("#error_message").textContent = msg;
+    }
 };
 
 const playAgainButtonClick = () => {

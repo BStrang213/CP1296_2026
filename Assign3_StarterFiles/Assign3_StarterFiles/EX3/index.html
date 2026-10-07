@@ -11,17 +11,17 @@
     <h1>Account Sign Up</h1>
     <form action="confirm.html" method="post">
         <label for="name">User Name:</label>
-        <input type="text" name="name" id="name" required autofocus>
+        <input type="text" name="name" id="name" pattern="^[A-Za-z]{5,}$" required autofocus>
         <span></span>
         <br>
 
         <label for="password_1">Password:</label>
-        <input type="text" name="password_1" id="password_1" required>
+        <input type="text" name="password_1" id="password_1" pattern="^(?=.*[A-Z])(?=.*\d).{8,}$" required>
         <span></span>
         <br>
 
         <label for="password_2">Re-enter Password:</label>
-        <input type="text" name="password_2" id="password_2" required>
+        <input type="text" name="password_2" id="password_2" pattern="^(?=.*[A-Z])(?=.*\d).{8,}$" required>
         <span></span>
         <br>
 
