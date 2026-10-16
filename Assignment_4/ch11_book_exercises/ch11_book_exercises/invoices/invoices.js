@@ -33,6 +33,11 @@ function displayInvoices(invoices) {
     }
 
     // add one row for each invoice
+    for (let i = 1; i < invoices.length; i++) {
+        const col = document.createElement("tr");
+        const textNode = document.createTextNode(invoices);
+        col.append(textNode);
+    }
 }
 
  

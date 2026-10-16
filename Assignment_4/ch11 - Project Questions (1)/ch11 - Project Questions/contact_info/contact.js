@@ -11,11 +11,18 @@ const clearContact = () => {
     sessionStorage.removeItem("dob");
 };
 const saveContact = () => {
+    let userData = [];
     sessionStorage.name = getElement("#name").value;
     sessionStorage.email = getElement("#email").value;
     sessionStorage.phone = getElement("#phone").value;
     sessionStorage.zip = getElement("#zip").value;
     sessionStorage.dob = new Date(getElement("#dob").value + "T00:00:00");
+    userData.push(sessionStorage.name);
+    userData.push(sessionStorage.email);
+    userData.push(sessionStorage.phone);
+    userData.push(sessionStorage.zip);
+    userData.push(sessionStorage.dob);
+    console.log(userData);
 };
 const displayContact = () => {
     getElement("#name").value = sessionStorage.name ?? "";
