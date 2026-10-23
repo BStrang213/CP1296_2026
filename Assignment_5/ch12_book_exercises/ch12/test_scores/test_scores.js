@@ -3,7 +3,8 @@
 const getElement = selector => document.querySelector(selector);
 
 document.addEventListener("DOMContentLoaded", () => {
-    const scores = [];
+    const testData = new TestScores();
+    const scores = testData.scores;
 
     getElement("#add_score").addEventListener("click", () => {
         // clear any previous error message
