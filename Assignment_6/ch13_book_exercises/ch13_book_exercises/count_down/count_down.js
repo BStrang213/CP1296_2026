@@ -1,4 +1,5 @@
 "use strict";
+import Event from "./lib_event.js";
 
 const getElement = selector => document.querySelector(selector);
 

@@ -1,5 +1,7 @@
 "use strict";
 
+import Trip from "./lib_trip";
+
 class Trips {
     #trips = null;               // a private field    
 
