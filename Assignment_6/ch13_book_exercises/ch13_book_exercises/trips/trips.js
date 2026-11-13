@@ -1,9 +1,10 @@
 "use strict";
+import Trip from "./lib_trip";
 
 const getElement = selector => document.querySelector(selector);
 
 document.addEventListener("DOMContentLoaded", () => {
-    const trips = new Trips();
+    const trips = new trips();
 
     getElement("#add_trip").addEventListener("click", () => {
         const msgElement = getElement("#msg");

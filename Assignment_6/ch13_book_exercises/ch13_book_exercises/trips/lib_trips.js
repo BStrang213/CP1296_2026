@@ -5,9 +5,9 @@ import Trip from "./lib_trip";
 class Trips {
     #trips = null;               // a private field    
 
-    constructor() {
-        this.#trips = [];       
-    }
+    // constructor() {
+    //     this.#trips = [];       
+    // }
 
     push(trip) {
         if (trip instanceof Trip) {  // only add valid Trip objects
