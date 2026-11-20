@@ -52,12 +52,13 @@ document.addEventListener("DOMContentLoaded", async() => {
             },
             body: JSON.stringify({name, email})
         }
-
-        // make API GET request to display updated data
-        fetch(url)
+        fetch(url, addEmail)
             .then(response => response.json())
             .then(json => console.log(json))
             .catch(e => console.log(e.message));
+
+        // make API GET request to display updated data
+
     });
 
     getElement("#delete_email").addEventListener("click", async() => {
