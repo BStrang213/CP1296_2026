@@ -10,11 +10,6 @@ app.get("/", (request, response) => {
 response.json({info: "An API that includes CORS headers."});
 });
 
-// listen for requests on port 3000
-app.listen(3000, () => {
-console.log("API listening on port 3000");
-});
-
 app.post("/movie", (req, res) => {
     const name = req.body.movie;
     if(name == "Titanic") {
@@ -34,4 +29,9 @@ app.post("/movie", (req, res) => {
             message: `This data base does not have the movie ${name}.`
         })
     }
+});
+
+// listen for requests on port 3000
+app.listen(3000, () => {
+console.log("API listening on port 3000");
 });
