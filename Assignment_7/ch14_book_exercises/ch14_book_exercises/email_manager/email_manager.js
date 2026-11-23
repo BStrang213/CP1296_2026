@@ -72,11 +72,13 @@ document.addEventListener("DOMContentLoaded", async() => {
 
         // make API DELETE request to delete email from list
         //alert("Error: Delete email not working yet.");
-        fetch(url, {method: 'DELETE'})
+        fetch(url + id, {method: 'DELETE'})
             .then(response => response.json())
-            .then(json => console.log(json))
+            .then(json => console.log())
             .catch(e => console.log(e.message));
 
         // make API GET request to display updated data
+        const errorMessage = getElement("#msg");
+        errorMessage.textContent = e;
     });
 });
