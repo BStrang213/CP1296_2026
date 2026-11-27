@@ -1,47 +1,27 @@
 import express from "express";
-//import cors from "cors";
+import cors from "cors";
 
 const app = express();
-//app.use(cors());
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (request, response) => {
     response.json({ info: "A simple API for Eric's Weather app." })
 });
-app.post("/weather", (req, res) => {
+app.post("/weather", async (req, res) => {
     const city = req.body.weather;
-    if (city == "toronto") {
-        res.json( { "cityName": "Toronto",
-            "description": "Sunny",
-            "Temperature": "23°C",
-            "windspeed": "2kn" })
-    }
-    else if (city == "vancouver") {
-        res.json( { "cityName": "Vancouver",
-            "description": "Rainy",
-            "Temperature": "19°C",
-            "windspeed": "4kn" })
-    }
-    else if (city == "montreal") {
-        res.json( { "cityName": "Monteal",
-            "description": "Tornado",
-            "Temperature": "10°C",
-            "windspeed": "50kn" })
-    }
-    else if (city == "halifax") {
-        res.json( { "cityName": "Halifax",
-            "description": "tsunami",
-            "Temperature": "15°C",
-            "windspeed": "16kn" })
-    }
-    else {
-        res.status(404).json({ 
-            error: 'Not Found', 
-            message: `Do not have info for the city of ${city}` 
-        });
-    }
+        const domain = `https://api.openweathermap.org/data/2.5/weather`;
+        const request = `?q=${city}&appid=ac3e849d0db4ebf6411f3988b6df47da`;
+        const response = await fetch(domain + request);
+        const json = await response.json();
+        console.log(json);
+        res.json(json);
 });
 
 app.listen(3000, () => {
   console.log("API listening on port 3000");
 });
+
+//https://openweathermap.org/api/current?collection=current_forecast#geocoding
+//erics api key = cdb8c91a6e70993b56fc5c8877c847f3
+//my api key = ac3e849d0db4ebf6411f3988b6df47da

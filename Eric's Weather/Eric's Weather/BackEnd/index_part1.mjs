@@ -11,27 +11,27 @@ app.get("/", (request, response) => {
 app.post("/weather", (req, res) => {
     const city = req.body.weather;
     if (city == "toronto") {
-        res.json( { "city": "Toronto",
+        res.json( { "cityName": "Toronto",
             "description": "Sunny",
-            "Temperature": "23°C",
+            "temperature": "23°C",
             "windspeed": "2kn" })
     }
     else if (city == "vancouver") {
-        res.json( { "city": "Vancouver",
+        res.json( { "cityName": "Vancouver",
             "description": "Rainy",
-            "Temperature": "19°C",
+            "temperature": "19°C",
             "windspeed": "4kn" })
     }
     else if (city == "montreal") {
-        res.json( { "city": "Monteal",
+        res.json( { "cityName": "Monteal",
             "description": "Tornado",
-            "Temperature": "10°C",
+            "temperature": "10°C",
             "windspeed": "50kn" })
     }
     else if (city == "halifax") {
-        res.json( { "city": "Halifax",
+        res.json( { "cityName": "Halifax",
             "description": "tsunami",
-            "Temperature": "15°C",
+            "temperature": "15°C",
             "windspeed": "16kn" })
     }
     else {
